@@ -1,6 +1,8 @@
 <!doctype html>
+
 <html lang="{{ app()->getLocale() }}">
     <head>
+        
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -13,8 +15,8 @@
         <!-- Styles -->
         <style>
             html, body {
-                background-color: #fff;
-                color: #636b6f;
+                background-color: #ccc;
+                color: #3b877b;
                 font-family: 'Raleway', sans-serif;
                 font-weight: 100;
                 height: 100vh;
@@ -43,6 +45,7 @@
 
             .content {
                 text-align: center;
+
             }
 
             .title {
@@ -61,6 +64,7 @@
 
             .m-b-md {
                 margin-bottom: 30px;
+
             }
         </style>
     </head>
@@ -79,15 +83,15 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Welcome
+                    Welcome to Tracker
                 </div>
-
-                <div class="links">
-                    <a href="https://laravel.com/docs">Documentation</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+                <div class="display m-b-md">
+                    <img src="http://pngimg.com/uploads/monitor/laptop_PNG5888.png" width='300px' height='auto'/>
+                </div>
+                <div class='description m-b-md'>
+                    A quick tool to track things and quickly discover the positive or negative relationships between your things.
+                    <br/>
+                    Give it a try <a class="links" href="{{ url('/register') }}">Register</a>
                 </div>
             </div>
         </div>
