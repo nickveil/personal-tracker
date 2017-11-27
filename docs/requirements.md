@@ -1,6 +1,6 @@
 # Tracker
 
----
+
 
 A web application to track anything. Tracker allows a user to track their habits or other items by collecting user input. Users can then navigate to a static page.
 
@@ -14,7 +14,7 @@ A web application to track anything. Tracker allows a user to track their habits
 
 ## User Stories
 
----
+
 
 1. As a user I want to increment a counter so that I can count the number of time I conduct a particular habit throughout the day.
 
@@ -24,7 +24,7 @@ A web application to track anything. Tracker allows a user to track their habits
 
 
 ## MVP
----
+
 
 [X] 1. Create one user to begin
 
@@ -54,7 +54,7 @@ A web application to track anything. Tracker allows a user to track their habits
 [ ] 5. Have a display page that shows previous days totals
 
 ## Stretch Goals
----
+
 
 [ ] 1. Capture data from a user setup screen to create new tracks
 
