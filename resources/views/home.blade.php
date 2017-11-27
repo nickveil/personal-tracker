@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.currentTracks')
 
 @section('content')
 <div class="container">
