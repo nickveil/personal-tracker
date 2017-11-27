@@ -67,7 +67,39 @@
 
             .m-b-md {
                 margin-bottom: 30px;
+            }
 
+            .panel-heading {
+                color: #3b877b !important;
+                text-align: center;
+                font-size: 24px;
+                font-weight: 400;
+                background-color: #eee !important;
+            }
+            .card {
+                border: solid #3b877b 1px;
+                min-width: 250px;
+                margin :5px;
+                display: inline-block;
+                height: 300px;
+
+            }
+            .trackerValue {
+                /*border: solid #3b877b 1px;*/
+                font-size: 45px;
+                padding:auto;
+                width: auto;
+                height:auto;
+                margin: auto;
+            }
+
+            .arrow {
+                font-size: 48px;
+            }
+
+            .container .panel-body ul {
+                display:inline-block;
+                justify-content: center;
             }
         </style>
 </head>
@@ -130,6 +162,7 @@
         </nav>
 
         @yield('content')
+        
     </div>
 
     <!-- Scripts -->
