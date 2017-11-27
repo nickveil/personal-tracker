@@ -81,7 +81,7 @@
                 min-width: 250px;
                 margin :5px;
                 display: inline-block;
-                height: 300px;
+                height: 320px;
 
             }
             .trackerValue {
@@ -91,6 +91,10 @@
                 width: auto;
                 height:auto;
                 margin: auto;
+            }
+
+            .trackTitle {
+                margin: 6px;
             }
 
             .arrow {
