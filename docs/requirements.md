@@ -30,7 +30,7 @@ A web application to track anything. Tracker allows a user to track their habits
 
 			[X]	- Create one user for login and assign data
 
-[ ] 2. Create two weeks worth of Seed Data for each track
+[x] 2. Create two weeks worth of Seed Data for each track
 
 [X] 3. Create two individual tracks
 
