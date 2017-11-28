@@ -16,7 +16,6 @@ class CreateTrackerTypesTable extends Migration
         Schema::create('tracker_types', function (Blueprint $table) {
             $table->increments('id');
             $table->string('tracker_type');
-            $table->timestamps();
         });
     }
 
