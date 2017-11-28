@@ -7,14 +7,11 @@
         <div class="col-lg-12">
             <div class="panel panel-default">
                 <div class="panel-heading">Current Tracks</div>
-
                 <div class="panel-body">
-                
                     <ul class="list-unstyled list-inline">
-                        <li>@yield('totalsCard')</li>
                         <li>@yield('incrementCard')</li>
-                    </ul>
-                    
+                        <li>@yield('totalsCard')</li>
+                    </ul>  
                 </div>
             </div>
         </div>
