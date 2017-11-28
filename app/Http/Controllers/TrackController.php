@@ -13,7 +13,7 @@ class TrackController extends Controller
      */
     public function index()
     {
-        return view('trackCards/totalsCard');
+        return view('trackCards.totalsCard');
     }
 
     /**
