@@ -48,7 +48,7 @@
 							</div>
 							<div class="col">
 								<div class='editTrack'><a href='#'>Set Total</a></div>
-								<div><a href="tracks/{{$track->id}} "> History</a></div>								
+								<div><a href="tracks/{{$track->id}} "> History</a></div>
 							</div>
 						</div>
 					</div>

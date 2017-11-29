@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use Carbon\Carbon;
+
 class TrackController extends Controller
 {
 
@@ -21,16 +23,13 @@ class TrackController extends Controller
 
         $user = \Auth::user()->id;
         $tracker = \App\Tracker::all()->where('user_id',$user);
-        $existingTracks = $tracker->where('type_id',1)->first();
- 
-        
-
+        $existingTracks = $tracker->where('type_id',2)->first();
         if ($existingTracks == null){
             return view ('tracks');
         }
-        $trackName = $existingTracks->name;
+        // $trackName = $existingTracks->name;
         //$trackID = 
-        return view('trackCards.totalsCard',compact('tracker','trackName','user','existingTracks','tracks'));
+        return view('trackCards.allUserTracks',compact('tracker','trackName','user','existingTracks','tracks'));
     }
 
     /**
@@ -62,7 +61,18 @@ class TrackController extends Controller
      */
     public function show($id)
     {
-        return 'You found the show route';
+        $backURL = url('tracks');
+
+        $user = \Auth::user()->id;
+        $tracker = \App\Tracker::all()->where('user_id',$user);
+        $events = \App\Event::all();
+        $trackTotal = $events->where('tracker_id', $id)->sum('delta');
+        
+        
+        $trackName = $tracker->where('id', $id)->first();
+        // return $trackName;
+
+        return view('display', compact('id','backURL','trackName','trackTotal'));
     }
 
     /**

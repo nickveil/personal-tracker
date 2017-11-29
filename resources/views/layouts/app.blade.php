@@ -77,8 +77,28 @@
                 background-color: #eee !important;
             }
             .card {
+                border: solid #3b877b 3px;
+                min-width: 250px;
+                margin :5px;
+                display: inline-block;
+                height: 320px;
+                box-shadow: -3px 3px #ccc;
+
+            }
+            .totalCard {
                 border: solid #3b877b 1px;
                 min-width: 250px;
+                margin :5px;
+                display: inline-block;
+                height: 230px;
+
+            }
+
+            .graph {
+                border: solid #3b877b 1px;
+                text-align: center;
+                background-color: #aaa;
+                width:auto;
                 margin :5px;
                 display: inline-block;
                 height: 320px;
@@ -86,19 +106,20 @@
             }
             .trackerValue {
                 /*border: solid #3b877b 1px;*/
-                font-size: 45px;
-                padding:auto;
+                font-size: 65px;
+                padding:-100px !important;
                 width: auto;
                 height:auto;
-                margin: auto;
+                margin: 2px;
             }
 
             .trackTitle {
-                margin: 6px;
+                margin: -15px 2px;
             }
 
             .arrow {
-                font-size: 48px;
+                margin: -20px 2px;
+                font-size: 55px;
             }
 
             .container .panel-body ul {
