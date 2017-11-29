@@ -6,6 +6,11 @@ use Illuminate\Http\Request;
 
 class TrackController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -13,11 +18,19 @@ class TrackController extends Controller
      */
     public function index()
     {
+
         $user = \Auth::user()->id;
         $tracker = \App\Tracker::all()->where('user_id',$user);
-        $existingTracks = $tracker->where('type_id',2)->first();
+        $existingTracks = $tracker->where('type_id',1)->first();
+ 
+        
+
+        if ($existingTracks == null){
+            return view ('tracks');
+        }
         $trackName = $existingTracks->name;
-        return view('trackCards.totalsCard',compact('tracker','trackName','user','existingTracks'));
+        //$trackID = 
+        return view('trackCards.totalsCard',compact('tracker','trackName','user','existingTracks','tracks'));
     }
 
     /**
@@ -49,7 +62,7 @@ class TrackController extends Controller
      */
     public function show($id)
     {
-        return 'Your found the show route';
+        return 'You found the show route';
     }
 
     /**

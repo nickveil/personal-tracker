@@ -30,4 +30,9 @@ class User extends Authenticatable
     public function userID(){
         return $this->hasMany('App\User','user_id');
     }
+
+    public function tracks() {
+        $this
+            ->hasMany('App\Tracker');
+    }
 }
