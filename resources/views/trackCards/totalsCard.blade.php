@@ -38,12 +38,13 @@
 
 @section('incrementCard')
 
-
+{{$user}}<br/>
+{{$existingTracks}}
 
   <div class="row">
     <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
 			<div class="card">
-				<div class="trackTitle text-center"><h1>Cups of Coffee</h1></div>
+				<div class="trackTitle text-center"><h1>{{ $trackName }}</h1></div>
 				<div class="row">
 					<div class="text-center">
 						<div class="trackerValue"><strong>3</strong></div>
@@ -57,6 +58,7 @@
 							</div>
 							<div class="col">
 								<div class='editTrack'><a href='#'>Change</a></div>
+								<div><a href="tracks/{{1}} "> History</a></div> <!-- Need to set id -->
 							</div>
 						</div>
 					</div>

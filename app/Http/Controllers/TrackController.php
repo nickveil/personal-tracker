@@ -13,7 +13,11 @@ class TrackController extends Controller
      */
     public function index()
     {
-        return view('trackCards.totalsCard');
+        $user = \Auth::user()->id;
+        $tracker = \App\Tracker::all()->where('user_id',$user);
+        $existingTracks = $tracker->where('type_id',2)->first();
+        $trackName = $existingTracks->name;
+        return view('trackCards.totalsCard',compact('tracker','trackName','user','existingTracks'));
     }
 
     /**
@@ -45,7 +49,7 @@ class TrackController extends Controller
      */
     public function show($id)
     {
-        //
+        return 'Your found the show route';
     }
 
     /**
