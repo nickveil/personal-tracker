@@ -67,6 +67,8 @@ class TrackController extends Controller
         $tracker = \App\Tracker::all()->where('user_id',$user);
         $events = \App\Event::all();
         $trackTotal = $events->where('tracker_id', $id)->sum('delta');
+        // $minDateRange = $events->select('date',Carbon::now()->subDays(2))->get();
+        // return $minDateRange; This didn't work
         
         
         $trackName = $tracker->where('id', $id)->first();

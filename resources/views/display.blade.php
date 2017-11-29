@@ -21,6 +21,8 @@
                                     <div class="text-center">
                                         <div class="trackerValue"><strong><h1>{{$trackTotal}}</h1></strong></div>
                                     </div>
+                                    <div class='trackerDate'>minDateRange: Needs Work
+                                    </div>
                                 </div>
                             </div>
                         </div>

@@ -91,6 +91,7 @@
                 margin :5px;
                 display: inline-block;
                 height: 230px;
+                box-shadow: -3px 3px #ccc;
 
             }
 
@@ -102,6 +103,7 @@
                 margin :5px;
                 display: inline-block;
                 height: 320px;
+
 
             }
             .trackerValue {
