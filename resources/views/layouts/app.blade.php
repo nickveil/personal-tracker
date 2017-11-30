@@ -99,7 +99,7 @@
                 border: solid #3b877b 1px;
                 text-align: center;
                 background-color: #aaa;
-                width:auto;
+                width:700px;
                 margin :5px;
                 display: inline-block;
                 height: 320px;

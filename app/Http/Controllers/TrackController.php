@@ -24,7 +24,9 @@ class TrackController extends Controller
         $user = \Auth::user()->id;
         $tracker = \App\Tracker::all()->where('user_id',$user);
         $existingTracks = $tracker->where('type_id',2)->first();
-        if ($existingTracks == null){
+
+
+        if ($existingTracks == null){ // to handle a new user condition
             return view ('tracks');
         }
         // $trackName = $existingTracks->name;
@@ -63,18 +65,22 @@ class TrackController extends Controller
     {
         $backURL = url('tracks');
 
+        // Info for Track History (User auth and track name)
         $user = \Auth::user()->id;
         $tracker = \App\Tracker::all()->where('user_id',$user);
+        $trackName = $tracker->where('id', $id)->first();
+
+        // Total data (overall and weekly)
         $events = \App\Event::all();
         $trackTotal = $events->where('tracker_id', $id)->sum('delta');
-        // $minDateRange = $events->select('date',Carbon::now()->subDays(2))->get();
-        // return $minDateRange; This didn't work
+        $lastWeekTotals = $events->where('tracker_id', $id)->where('date', '>',Carbon::now()->subDays(7))->where('date', '<',Carbon::now())->sum('delta');
+        
+        // Need graph info
         
         
-        $trackName = $tracker->where('id', $id)->first();
-        // return $trackName;
+        
 
-        return view('display', compact('id','backURL','trackName','trackTotal'));
+        return view('display', compact('backURL','trackName','trackTotal','lastWeekTotals'));
     }
 
     /**

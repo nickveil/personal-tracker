@@ -34,22 +34,22 @@ A web application to track anything. Tracker allows a user to track their habits
 
 [X] 3. Create two individual tracks
 
-			[X] - Track 1 -- Cups of Coffee
-						- Display should include
-							[X] 1. Number that displays current total
-							[X] 2. Increment arrow
-							[X] 3. Decrement arrow
-							[X] 4. Last update indicator
-							[X] 5. Link that allows user to update track
-							[X] 6. Title block
+	[X] - Track 1 -- Cups of Coffee
+				- Display should include
+					[X] 1. Number that displays current total
+					[X] 2. Increment arrow
+					[X] 3. Decrement arrow
+					[X] 4. Last update indicator
+					[X] 5. Link that allows user to update track
+					[X] 6. Title block
 
-			[X] - Track 2 -- Hours of Sleep
-						- Display should include
-						[X] 1. Number box that displays last recorded hours of sleep
-						[X] 2. Link that allows user to set date
-						[X] 3. Last update indicator
+	[X] - Track 2 -- Hours of Sleep
+				- Display should include
+				[X] 1. Number box that displays last recorded hours of sleep
+				[X] 2. Link that allows user to set date
+				[X] 3. Last update indicator
 
-[ ] 4. Login in as user and navigate to the data
+[X] 4. Login in as user and navigate to the data
 
 [ ] 5. Have a display page that shows previous days totals
 
