@@ -77,12 +77,13 @@
                 background-color: #eee !important;
             }
             .card {
-                border: solid #3b877b 3px;
+                border: solid #3b877b 1px;
                 min-width: 250px;
                 margin :5px;
                 display: inline-block;
                 height: 320px;
                 box-shadow: -3px 3px #ccc;
+                border-radius: 3px;
 
             }
             .totalCard {
@@ -92,6 +93,7 @@
                 display: inline-block;
                 height: 230px;
                 box-shadow: -3px 3px #ccc;
+                border-radius: 3px;
 
             }
 
@@ -103,6 +105,7 @@
                 margin :5px;
                 display: inline-block;
                 height: 320px;
+                border-radius: 3px;
 
 
             }

@@ -18,4 +18,8 @@ class Tracker extends Model
 	public function event() {
 		return $this->hasMany('App\Event','tracker_id');
 	}
+
+	public function trackId(){
+		return $this->belongsTo('App\User','id');
+	}
 }

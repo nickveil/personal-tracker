@@ -31,8 +31,11 @@ class User extends Authenticatable
         return $this->hasMany('App\User','user_id');
     }
 
-    public function tracks() {
-        $this
-            ->hasMany('App\Tracker');
+    public function userTracks() {
+        return
+            $this
+                ->belongsToMany('App\Tracker','user_id');
     }
+
+
 }
