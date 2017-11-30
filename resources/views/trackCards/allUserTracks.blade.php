@@ -4,7 +4,7 @@
 
 @section('incrementCard')
 
-$tracks _ {{$tracks}}
+
 <div class="row">
 
 @foreach ($tracker as $track)

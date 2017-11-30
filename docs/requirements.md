@@ -51,7 +51,7 @@ A web application to track anything. Tracker allows a user to track their habits
 
 [X] 4. Login in as user and navigate to the data
 
-[ ] 5. Have a display page that shows previous days totals
+[X] 5. Have a display page that shows previous days totals
 
 ## Stretch Goals
 

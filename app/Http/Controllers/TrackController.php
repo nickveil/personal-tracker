@@ -25,40 +25,43 @@ class TrackController extends Controller
         // Specifying current user tracks
         $user = \Auth::user()->id;
         $tracker = \App\Tracker::all()->where('user_id',$user);
+        
         if ($tracker == null){ // to handle a new user condition
             return view ('tracks');
         }
         
-        //
+        // Pulls data from DB to populate Count and Last Update
 
         $events = \App\Event::all();
         
 
         foreach ($tracker as $track) {
-        $lastUpdate = $events->where( 'tracker_id', $track->id )->max('date');
-        if($lastUpdate === Carbon::now()->format('Y-m-d')){
-            $trackTotal = $events->where( 'tracker_id', $track->id )->where( 'date', $lastUpdate)->sum( 'delta' );
+        $lastUpdate = $events
+                            ->where( 'tracker_id', $track->id )
+                            ->max('date');
+
+        if($lastUpdate < Carbon::now()->format('Y-m-d') && $track->id===2){
+            $trackTotal = $events
+                                ->where( 'tracker_id', $track->id )
+                                ->where( 'date', $lastUpdate)
+                                ->sum( 'delta' );
+
         }
         else{
-            $trackTotal = $events->where( 'tracker_id', $track->id )->where( 'date', Carbon::now()->format('Y-m-d'))->sum( 'delta' );
+            $trackTotal = $events
+                                ->where( 'tracker_id', $track->id )
+                                ->where( 'date', Carbon::now()
+                                ->format('Y-m-d'))
+                                ->sum('delta');
+                                
+            $lastUpdate = Carbon::now()->format('Y-m-d');
         }
+        
         $track->trackTotal = $trackTotal;
         $track->lastUpdate = $lastUpdate;
         }
-        //dd($lastUpdate);
-        $tracks =  1;
-        //$events->where('tracker_id',2);
-        //dd($tracker);
 
-        // foreach($track in $tracker){
-        //     $tracker_id = $track->type_id;
-        // }
-        // //return $tracker;
-        // $trackTotal = $events->where('tracker_id',1)->where('date','2017-11-25')->sum('delta');
-        // // $todayTotals = $events->where('tracker_id',2)->where('date','2017-11-25')->sum('delta');
-
-
-        return view('trackCards.allUserTracks',compact('tracker','tracks','todayTotals','trackTotal','lastUpdate'));
+        return view('trackCards.allUserTracks',compact('tracker','todayTotals','trackTotal','lastUpdate'));
     }
 
     /**
