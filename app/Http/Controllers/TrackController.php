@@ -171,11 +171,26 @@ class TrackController extends Controller
     {
         
 
+        $newEvent = new \App\Event;
+
+        $user = \Auth::user()->id;
+        $tracker = \App\Tracker::all()->where('user_id',$user);
+        $trackName = $tracker->where('id', $id)->first();
+
+        $today = Carbon::now()->format('m-d-Y');
+
+        $newEvent->tracker_id = $id;
+        $newEvent->delta = $request->input('count');
+        $newEvent->date = $request->input('userDate');
+        $newEvent->time = Carbon::now('America/New_York')->toTimeString();
+        $newEvent->created_at = Carbon::now();
+        $newEvent->updated_at = Carbon::now();
 
 
-        return "hi";
+        $newEvent->save();
+        return redirect('/home');
 
-        
+
     }
 
     /**

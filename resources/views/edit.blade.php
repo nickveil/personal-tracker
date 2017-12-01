@@ -27,20 +27,20 @@
 										<input type="hidden" name="_token" value="{{ csrf_token() }}">
 										<div class="form-group">
 											<div class="numCol">
-												<input type="text" class="form-control text-center num" id="$count" placeholder="{{$trackName->id}}">
+												<input type="text" class="form-control text-center num" name="count" id="count" placeholder="{{$trackName->id}}">
 											</div>
 											<div class="row">
 												<div class="numCol">
 													<div class="form-group">
 														
-														<input type="email" class="form-control text-center date" id="userDate" placeholder="{{$today}}">
+														<input type="text" class="form-control text-center date" name="userDate" id="userDate" placeholder="{{$today}}">
 													</div>
 												</div>
 											</div>	
 											<div class="row">
 												<div class="form-group text-center">
 		                      <div class="col-md-8 col-md-offset-4">
-		                        <button type="submit" class="btn btn-primary">
+		                        <button type="submit" name="submit" class="btn btn-primary">
 		                            Update Track
 		                        </button>
 		                      </div>
@@ -48,9 +48,6 @@
 											</div>
 										</div>
 									</form>
-
-
-
 								</div>
 							</div>
 						</div>
