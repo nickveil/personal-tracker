@@ -142,13 +142,22 @@ class TrackController extends Controller
      */
     public function edit($id)
     {
+        
+
         $backURL = url('tracks');
 
         $user = \Auth::user()->id;
         $tracker = \App\Tracker::all()->where('user_id',$user);
         $trackName = $tracker->where('id', $id)->first();
 
-        return view('edit',compact('id','backURL','trackName'));
+        $today = Carbon::now()->format('m-d-Y');
+        //$newEvent->delta = ;
+        //$newEvent->date = Carbon::now('America/New_York')->format('Y-m-d');
+        //$newEvent->time = ??;
+        // $newEvent->created_at = Carbon::now();
+        // $newEvent->updated_at = Carbon::now();
+
+        return view('edit',compact('id','backURL','trackName','today'));
     }
 
     /**
@@ -160,7 +169,13 @@ class TrackController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        
+
+
+
+        return "hi";
+
+        
     }
 
     /**

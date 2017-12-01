@@ -57,7 +57,7 @@
 								<div class='trackerDate'>  Last Update: {{$track->lastUpdate}} </div>
 							</div>
 							<div class="col">
-								<div class='editTrack' action="get" ><a href='/tracks/{{$track->id}}/edit'>Set Total</a></div>
+								<div class='editTrack'><a href='tracks/{{$track->id}}/edit'>Set Total</a></div>
 								<div><a href="tracks/{{$track->id}} "> History</a></div>
 							</div>
 						</div>

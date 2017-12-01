@@ -21,4 +21,6 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource('tracks', 'TrackController');
 
-Route::resource('tracks/{id}','TrackController');
+// Route::resource('tracks/{id}','TrackController');
+
+Route::get('/tracks/{id}/update','TrackController@update')->name('update');
