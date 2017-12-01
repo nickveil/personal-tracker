@@ -27,7 +27,7 @@
 										<input type="hidden" name="_token" value="{{ csrf_token() }}">
 										<div class="form-group">
 											<div class="numCol">
-												<input type="text" class="form-control text-center num" name="count" id="count" placeholder="{{$trackName->id}}">
+												<input type="text" class="form-control text-center num" name="count" id="count" placeholder="Sleep">
 											</div>
 											<div class="row">
 												<div class="numCol">
