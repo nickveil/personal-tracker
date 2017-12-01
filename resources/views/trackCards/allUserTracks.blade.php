@@ -19,8 +19,11 @@
 					<div class="text-center">
 						<div class="trackerValue"><strong>{{$track->trackTotal}}</strong></div>
 						<div class="arrow col">
-							<strong><span class="arrow glyphicon glyphicon-triangle-top"></span></strong>
-							<strong><span class="arrow glyphicon glyphicon-triangle-bottom"></span></strong>
+							<form method="post" action="/tracks">
+								<input type="hidden" name="_token" value="{{ csrf_token() }}">
+								<button type="submit" name="button" value="{{$track->id}}" class="arrow glyphicon glyphicon-triangle-top"></button>
+								<button type="submit" name="button" value="-{{$track->id}}" class="arrow glyphicon glyphicon-triangle-bottom"></button>
+							</form>
 						</div>
 						<div class="row">
 							<div class="col">
@@ -28,7 +31,7 @@
 							</div>
 							<div class="col">
 								<div class='editTrack'><a href='#'>Change</a></div>
-								<div><a href="tracks/{{$track->id}} "> History</a></div> 
+								<div><a href="tracks/{{$track->id}}"> History</a></div> 
 							</div>
 						</div>
 					</div>

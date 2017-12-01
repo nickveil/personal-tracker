@@ -40,7 +40,7 @@ class TrackController extends Controller
                             ->where( 'tracker_id', $track->id )
                             ->max('date');
 
-        if($lastUpdate < Carbon::now()->format('Y-m-d') && $track->id===2){
+        if($lastUpdate < Carbon::now('America/New_York') && $track->id===1){
             $trackTotal = $events
                                 ->where( 'tracker_id', $track->id )
                                 ->where( 'date', $lastUpdate)
@@ -48,13 +48,13 @@ class TrackController extends Controller
 
         }
         else{
+
             $trackTotal = $events
                                 ->where( 'tracker_id', $track->id )
-                                ->where( 'date', Carbon::now()
-                                ->format('Y-m-d'))
+                                ->where( 'date', Carbon::now('America/New_York'))
                                 ->sum('delta');
                                 
-            $lastUpdate = Carbon::now()->format('Y-m-d');
+            $lastUpdate = Carbon::now('America/New_York')->format('Y-m-d');
         }
         
         $track->trackTotal = $trackTotal;
@@ -82,7 +82,24 @@ class TrackController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $value = $request->input('button');
+
+        $newEvent = new \App\Event;
+
+        $newEvent->tracker_id = abs($value);
+        if ($request->input('button') > 0){
+            $newEvent->delta = 1;
+        }elseif ($request->input('button')< 0){
+            $newEvent->delta = -1;
+        }
+
+        $newEvent->date = Carbon::now('America/New_York')->format('Y-m-d');
+        $newEvent->time = Carbon::now('America/New_York')->toTimeString();
+        $newEvent->created_at = Carbon::now();
+        $newEvent->updated_at = Carbon::now();
+
+        $newEvent->save();
+        return redirect('/tracks');
     }
 
     /**
