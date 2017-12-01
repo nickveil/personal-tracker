@@ -36,11 +36,14 @@ class TrackController extends Controller
         
 
         foreach ($tracker as $track) {
-        $lastUpdate = $events
+        $trackUpdate = $events
                             ->where( 'tracker_id', $track->id )
                             ->max('date');
 
-        if($lastUpdate < Carbon::now('America/New_York') && $track->id===1){
+        if($trackUpdate < Carbon::now('America/New_York')){ //ISSUE 1:this works correctly
+            $lastUpdate = $events
+                                ->where( 'tracker_id', $track->id )
+                                ->max('date');
             $trackTotal = $events
                                 ->where( 'tracker_id', $track->id )
                                 ->where( 'date', $lastUpdate)
@@ -49,7 +52,7 @@ class TrackController extends Controller
         }
         else{
 
-            $trackTotal = $events
+            $trackTotal = $events                                  // ISSUE 1:this does not work correctly
                                 ->where( 'tracker_id', $track->id )
                                 ->where( 'date', Carbon::now('America/New_York'))
                                 ->sum('delta');
@@ -59,6 +62,7 @@ class TrackController extends Controller
         
         $track->trackTotal = $trackTotal;
         $track->lastUpdate = $lastUpdate;
+
         }
 
         return view('trackCards.allUserTracks',compact('tracker','todayTotals','trackTotal','lastUpdate'));
@@ -138,7 +142,13 @@ class TrackController extends Controller
      */
     public function edit($id)
     {
-        //
+        $backURL = url('tracks');
+
+        $user = \Auth::user()->id;
+        $tracker = \App\Tracker::all()->where('user_id',$user);
+        $trackName = $tracker->where('id', $id)->first();
+
+        return view('edit',compact('id','backURL','trackName'));
     }
 
     /**

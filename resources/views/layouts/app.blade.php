@@ -10,10 +10,15 @@
 
     <title>{{ config('app.name', 'Tracker') }}</title>
 
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/css/bootstrap-datepicker.css" rel="stylesheet">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/js/bootstrap-datepicker.js"></script>
+
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
             <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
+
 
         <!-- Styles -->
         <style>
@@ -56,7 +61,7 @@
             }
 
             .links > a {
-                color: #636b6f;
+                color: #636b6f !important;
                 padding: 0 25px;
                 font-size: 12px;
                 font-weight: 600;
@@ -131,6 +136,17 @@
                 display:inline-block;
                 justify-content: center;
             }
+
+            .numCol{
+                align-items: center;
+            }
+            .num{
+                font-size: 65px;
+                padding:-100px !important;
+                width: 200px;
+                height:auto;
+                margin: 25px auto; 
+            }
         </style>
 </head>
 <body>
@@ -197,5 +213,6 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
+                                
 </body>
 </html>

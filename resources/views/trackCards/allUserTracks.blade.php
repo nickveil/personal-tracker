@@ -43,7 +43,7 @@
 	@else
 
 	  
-    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
 			<div class="card">
 
 				<div class="trackTitle text-center"><h1>{{$track->name}}</h1></div>
@@ -57,7 +57,7 @@
 								<div class='trackerDate'>  Last Update: {{$track->lastUpdate}} </div>
 							</div>
 							<div class="col">
-								<div class='editTrack'><a href='#'>Set Total</a></div>
+								<div class='editTrack' action="get" ><a href='/tracks/{{$track->id}}/edit'>Set Total</a></div>
 								<div><a href="tracks/{{$track->id}} "> History</a></div>
 							</div>
 						</div>
