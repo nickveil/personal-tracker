@@ -23,4 +23,4 @@ Route::resource('tracks', 'TrackController');
 
 // Route::resource('tracks/{id}','TrackController');
 
-Route::get('/tracks/{id}/update','TrackController@update')->name('update');
+Route::post('/tracks/newTrack','TrackController@newTrack');

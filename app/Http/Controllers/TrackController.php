@@ -75,7 +75,26 @@ class TrackController extends Controller
      */
     public function create()
     {
-        //
+
+        $backURL = url('tracks');
+        return view('createTrack',compact('backURL'));
+    }
+
+    public function newTrack(Request $request)
+    {
+        $backURL = url('tracks');
+        $newTrack = new \App\Tracker;
+
+        $user = \Auth::user()->id;
+
+        $newTrack->name = $request->input('trackName');
+        $newTrack->user_id = $user;
+
+        $newTrack->type_id = $request->input('trackType');
+
+        $newTrack->save();
+        //return $newTrack;
+        return redirect('/tracks');
     }
 
     /**
@@ -102,6 +121,7 @@ class TrackController extends Controller
         $newEvent->created_at = Carbon::now();
         $newEvent->updated_at = Carbon::now();
 
+        //return $newEvent;
         $newEvent->save();
         return redirect('/tracks');
     }
@@ -186,7 +206,7 @@ class TrackController extends Controller
         $newEvent->created_at = Carbon::now();
         $newEvent->updated_at = Carbon::now();
 
-
+        //return $newEvent;
         $newEvent->save();
         return redirect('/home');
 

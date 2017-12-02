@@ -20,6 +20,7 @@ class CreateTrackersTable extends Migration
             $table->foreign('user_id')->references('id')->on('users');
             $table->integer('type_id')->unsigned();
             $table->foreign('type_id')->references('id')->on('tracker_types');
+            $table->timestamps();
 
         });
     }

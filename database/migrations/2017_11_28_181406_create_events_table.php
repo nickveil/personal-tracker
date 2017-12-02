@@ -16,7 +16,7 @@ class CreateEventsTable extends Migration
         Schema::create('events', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('tracker_id')->unsigned();
-            $table->foreign('tracker_id')->references('id')->on('users');
+            $table->foreign('tracker_id')->references('id')->on('trackers');
             $table->integer('delta');
             $table->date('date');
             $table->time('time');

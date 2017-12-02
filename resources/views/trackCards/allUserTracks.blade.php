@@ -69,5 +69,6 @@
 	@endif
 
 @endforeach
+<a class="trackTitle" href="tracks/create"><strong>Create a new track...</strong></a>
 		</div>
 @endsection

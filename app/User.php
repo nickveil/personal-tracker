@@ -27,15 +27,15 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-    public function userID(){
-        return $this->hasMany('App\User','user_id');
-    }
+    // public function userID(){
+    //     return $this->hasMany('App\User','user_id');
+    // }
 
-    public function userTracks() {
-        return
-            $this
-                ->belongsToMany('App\Tracker','user_id');
-    }
+    // public function userTracks() {
+    //     return
+    //         $this
+    //             ->belongsToMany('App\Tracker','user_id');
+    // }
 
 
 }
