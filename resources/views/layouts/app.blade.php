@@ -79,6 +79,7 @@
             .card {
                 border: solid #3b877b 1px;
                 min-width: 250px;
+                padding: 5px;
                 margin :5px;
                 display: inline-block;
                 height: 320px;

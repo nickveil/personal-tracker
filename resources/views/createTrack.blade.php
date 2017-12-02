@@ -44,7 +44,9 @@
 
 
         </div>
-
+				<div class='text-center'>
+					<a href='{{ $backURL }}'>Cancel</a>
+				</div>        
       </div>
     </div>
   </div>

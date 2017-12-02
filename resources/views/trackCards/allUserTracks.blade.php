@@ -43,7 +43,7 @@
 	@else
 
 	  
-    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
 			<div class="card">
 
 				<div class="trackTitle text-center"><h1>{{$track->name}}</h1></div>
@@ -69,6 +69,5 @@
 	@endif
 
 @endforeach
-<a class="trackTitle" href="tracks/create"><strong>Create a new track...</strong></a>
 		</div>
 @endsection

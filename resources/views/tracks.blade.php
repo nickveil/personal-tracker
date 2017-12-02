@@ -7,6 +7,7 @@
         <div class="col-lg-12">
             <div class="panel panel-default">
                 <div class="panel-heading">Current Tracks</div>
+                <a class="trackTitle" href="tracks/create"><strong>Create a new track...</strong></a>
                 <div class="panel-body">
                     <ul class="list-unstyled list-inline">
                         <li>@yield('incrementCard')</li>
