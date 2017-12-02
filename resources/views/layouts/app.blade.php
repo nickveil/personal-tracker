@@ -10,6 +10,8 @@
 
     <title>{{ config('app.name', 'Tracker') }}</title>
 
+    {!! Charts::styles() !!}
+
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
             <!-- Fonts -->
@@ -101,11 +103,10 @@
             .graph {
                 border: solid #3b877b 1px;
                 text-align: center;
-                background-color: #aaa;
-                width:700px;
-                margin :5px;
-                display: inline-block;
-                height: 320px;
+                width:auto;
+                margin :25px;
+                height: auto;
+                box-shadow: -3px 3px #ccc;
                 border-radius: 3px;
 
 

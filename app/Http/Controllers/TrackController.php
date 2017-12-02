@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 
 use Carbon\Carbon;
 
+use Charts;
+
 class TrackController extends Controller
 {
 
@@ -52,7 +54,7 @@ class TrackController extends Controller
         }
         else{
 
-            $trackTotal = $events                                  // ISSUE 1:this does not work correctly
+            $trackTotal = $events  // ISSUE 1:this does not work correctly
                                 ->where( 'tracker_id', $track->id )
                                 ->where( 'date', $lastUpdate)
                                 ->sum('delta');
@@ -143,15 +145,37 @@ class TrackController extends Controller
 
         // Total data (overall and weekly)
         $events = \App\Event::all();
+        $eventTotal = $events->where('tracker_id', $id);
+        $test= $eventTotal->pluck('delta');
+
+        //return $test;
+
+
+
+
+
         $trackTotal = $events->where('tracker_id', $id)->sum('delta');
         $lastWeekTotals = $events->where('tracker_id', $id)->where('date', '>',Carbon::now()->subDays(7))->where('date', '<',Carbon::now())->sum('delta');
         
         // Need graph info
-        
+            $chart = Charts::multi('line', 'fusioncharts')
+                // Setup the chart settings
+                ->title("My Cool Chart")
+                // A dimension of 0 means it will take 100% of the space
+                ->dimensions(0, 400) // Width x Height
+                // This defines a preset of colors already done:)
+                ->template("material")
+                // You could always set them manually
+                // ->colors(['#2196F3', '#F44336', '#FFC107'])
+                // Setup the diferent datasets (this is a multi chart)
+                ->dataset('Element 1', $test)
+                
+                // Setup what the values mean
+            ;
         
         
 
-        return view('display', compact('backURL','trackName','trackTotal','lastWeekTotals'));
+        return view('display', compact('backURL','trackName','trackTotal','lastWeekTotals','chart'));
     }
 
     /**
