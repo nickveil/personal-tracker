@@ -146,33 +146,48 @@ class TrackController extends Controller
         // Total data (overall and weekly)
         $events = \App\Event::all();
         $eventTotal = $events->where('tracker_id', $id);
-        $test= $eventTotal->pluck('delta');
+        $test= $eventTotal->sum('delta');
+        $test2 = $eventTotal->avg('date');
 
-        //return $test;
-
-
-
-
-
+        // return $test;
+    
         $trackTotal = $events->where('tracker_id', $id)->sum('delta');
         $lastWeekTotals = $events->where('tracker_id', $id)->where('date', '>',Carbon::now()->subDays(7))->where('date', '<',Carbon::now())->sum('delta');
-        
+       
         // Need graph info
-            $chart = Charts::multi('line', 'fusioncharts')
+            // $chart = Charts::create('line', 'fusioncharts')
+            //     // Setup the chart settings
+            //     ->title("My Cool Chart")
+            //     // A dimension of 0 means it will take 100% of the space
+            //     ->dimensions(0, 400) // Width x Height
+            //     // This defines a preset of colors already done:)
+            //     ->template("material")
+            //     // You could always set them manually
+            //     // ->colors(['#2196F3', '#F44336', '#FFC107'])
+            //     // Setup the diferent datasets (this is a multi chart)
+            //     ->values( $test)
+            //     ->labels($test2)
+               
+                
+            //     // Setup what the values mean
+            // ;
+            $chart = Charts::database($events,'line', 'plottablejs')
                 // Setup the chart settings
+                ->elementLabel($trackName->name)
                 ->title("My Cool Chart")
                 // A dimension of 0 means it will take 100% of the space
-                ->dimensions(0, 400) // Width x Height
+                //->dimensions(0, 400) // Width x Height
                 // This defines a preset of colors already done:)
                 ->template("material")
                 // You could always set them manually
                 // ->colors(['#2196F3', '#F44336', '#FFC107'])
                 // Setup the diferent datasets (this is a multi chart)
-                ->dataset('Element 1', $test)
+                ->groupBy('date','track_id')
+
+               
                 
                 // Setup what the values mean
             ;
-        
         
 
         return view('display', compact('backURL','trackName','trackTotal','lastWeekTotals','chart'));
