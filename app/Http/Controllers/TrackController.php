@@ -82,6 +82,10 @@ class TrackController extends Controller
 
     public function newTrack(Request $request)
     {
+        $this->validate($request,[
+            'trackName'=> 'required|max:50',
+        ]);
+
         $backURL = url('tracks');
         $newTrack = new \App\Tracker;
 
@@ -182,7 +186,7 @@ class TrackController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $date = Carbon::now('America/New_York')->format('m-d-Y');
+        
         $this->validate($request,[
             'count'=> 'required|integer|min:0',
             'userDate' => 'required|date|date_format:m-d-Y|before:today'

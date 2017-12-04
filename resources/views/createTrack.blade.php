@@ -13,6 +13,17 @@
 
 
         	<form class="form-horizontal" method="post" action="/tracks/newTrack">
+        		@if(count($errors))
+										<div class="alert alert-danger">
+											<strong>Whoops!</strong> There were some problems with your input.
+											<br/>
+											<ul>
+												@foreach($errors->all() as $error)
+												<li>{{ $error }}</li>
+												@endforeach
+											</ul>
+										</div>
+									@endif
         		{{ csrf_field() }}
         		<input type="hidden" name="_token" value="{{ csrf_token() }}">
 					  <div class="form-group">
