@@ -14,6 +14,129 @@ class EventsTableSeeder extends Seeder
     public function run()
     {
         DB::table('events')->insert([
+            'tracker_id' => 3,
+            'delta' => 1,
+            'date' => Carbon::createFromDate(2017,11,16),
+            'time' => Carbon::createFromTime(7,15,0,'America/New_York'),
+            'created_at' => Carbon::createFromFormat('Y-m-d H:i:s', '2017-05-16 07:15:00')->toDateTimeString(),
+            'updated_at' => Carbon::createFromFormat('Y-m-d H:i:s', '2017-05-16 07:15:00')->toDateTimeString()
+        ]);
+
+        DB::table('events')->insert([
+            'tracker_id' => 3,
+            'delta' => 1,
+            'date' => Carbon::createFromDate(2017,11,16),
+            'time' => Carbon::createFromTime(8,15,0,'America/New_York'),
+            'created_at' => Carbon::createFromFormat('Y-m-d H:i:s', '2017-05-16 08:15:00')->toDateTimeString(),
+            'updated_at' => Carbon::createFromFormat('Y-m-d H:i:s', '2017-05-16 08:15:00')->toDateTimeString()
+        ]);
+        
+        DB::table('events')->insert([
+            'tracker_id' => 3,
+            'delta' => 1,
+            'date' => Carbon::createFromDate(2017,11,16),
+            'time' => Carbon::createFromTime(9,15,0,'America/New_York'),
+            'created_at' => Carbon::createFromFormat('Y-m-d H:i:s', '2017-05-16 09:15:00')->toDateTimeString(),
+            'updated_at' => Carbon::createFromFormat('Y-m-d H:i:s', '2017-05-16 09:15:00')->toDateTimeString()
+        ]);
+        
+        DB::table('events')->insert([
+            'tracker_id' => 3,
+            'delta' => 1,
+            'date' => Carbon::createFromDate(2017,11,16),
+            'time' => Carbon::createFromTime(10,15,0,'America/New_York'),
+            'created_at' => Carbon::createFromFormat('Y-m-d H:i:s', '2017-05-16 10:15:00')->toDateTimeString(),
+            'updated_at' => Carbon::createFromFormat('Y-m-d H:i:s', '2017-05-16 10:15:00')->toDateTimeString()
+        ]);
+
+        DB::table('events')->insert([
+            'tracker_id' => 3,
+            'delta' => 1,
+            'date' => Carbon::createFromDate(2017,11,17),
+            'time' => Carbon::createFromTime(8,15,0,'America/New_York'),
+            'created_at' => Carbon::createFromFormat('Y-m-d H:i:s', '2017-05-17 08:15:00')->toDateTimeString(),
+            'updated_at' => Carbon::createFromFormat('Y-m-d H:i:s', '2017-05-17 08:15:00')->toDateTimeString()
+        ]);
+        
+        DB::table('events')->insert([
+            'tracker_id' => 3,
+            'delta' => 1,
+            'date' => Carbon::createFromDate(2017,11,17),
+            'time' => Carbon::createFromTime(9,15,0,'America/New_York'),
+            'created_at' => Carbon::createFromFormat('Y-m-d H:i:s', '2017-05-17 09:15:00')->toDateTimeString(),
+            'updated_at' => Carbon::createFromFormat('Y-m-d H:i:s', '2017-05-17 09:15:00')->toDateTimeString()
+        ]);
+        
+        DB::table('events')->insert([
+            'tracker_id' => 3,
+            'delta' => 1,
+            'date' => Carbon::createFromDate(2017,11,17),
+            'time' => Carbon::createFromTime(10,15,0,'America/New_York'),
+            'created_at' => Carbon::createFromFormat('Y-m-d H:i:s', '2017-05-17 10:15:00')->toDateTimeString(),
+            'updated_at' => Carbon::createFromFormat('Y-m-d H:i:s', '2017-05-17 10:15:00')->toDateTimeString()
+        ]);
+
+
+        DB::table('events')->insert([
+            'tracker_id' => 3,
+            'delta' => 1,
+            'date' => Carbon::createFromDate(2017,11,18),
+            'time' => Carbon::createFromTime(8,15,0,'America/New_York'),
+            'created_at' => Carbon::createFromFormat('Y-m-d H:i:s', '2017-05-18 08:15:00')->toDateTimeString(),
+            'updated_at' => Carbon::createFromFormat('Y-m-d H:i:s', '2017-05-18 08:15:00')->toDateTimeString()
+        ]);
+        
+        DB::table('events')->insert([
+            'tracker_id' => 3,
+            'delta' => 1,
+            'date' => Carbon::createFromDate(2017,11,18),
+            'time' => Carbon::createFromTime(9,15,0,'America/New_York'),
+            'created_at' => Carbon::createFromFormat('Y-m-d H:i:s', '2017-05-18 09:15:00')->toDateTimeString(),
+            'updated_at' => Carbon::createFromFormat('Y-m-d H:i:s', '2017-05-18 09:15:00')->toDateTimeString()
+        ]);
+        
+        DB::table('events')->insert([
+            'tracker_id' => 3,
+            'delta' => 1,
+            'date' => Carbon::createFromDate(2017,11,18),
+            'time' => Carbon::createFromTime(10,15,0,'America/New_York'),
+            'created_at' => Carbon::createFromFormat('Y-m-d H:i:s', '2017-05-18 10:15:00')->toDateTimeString(),
+            'updated_at' => Carbon::createFromFormat('Y-m-d H:i:s', '2017-05-18 10:15:00')->toDateTimeString()
+        ]);
+
+        DB::table('events')->insert([
+            'tracker_id' => 3,
+            'delta' => -1,
+            'date' => Carbon::createFromDate(2017,11,18),
+            'time' => Carbon::createFromTime(8,15,0,'America/New_York'),
+            'created_at' => Carbon::createFromFormat('Y-m-d H:i:s', '2017-05-18 08:15:00')->toDateTimeString(),
+            'updated_at' => Carbon::createFromFormat('Y-m-d H:i:s', '2017-05-18 08:15:00')->toDateTimeString()
+        ]);
+        
+        DB::table('events')->insert([
+            'tracker_id' => 3,
+            'delta' => 1,
+            'date' => Carbon::createFromDate(2017,11,18),
+            'time' => Carbon::createFromTime(9,15,0,'America/New_York'),
+            'created_at' => Carbon::createFromFormat('Y-m-d H:i:s', '2017-05-18 09:15:00')->toDateTimeString(),
+            'updated_at' => Carbon::createFromFormat('Y-m-d H:i:s', '2017-05-18 09:15:00')->toDateTimeString()
+        ]);
+        
+        DB::table('events')->insert([
+            'tracker_id' => 3,
+            'delta' => 1,
+            'date' => Carbon::createFromDate(2017,11,18),
+            'time' => Carbon::createFromTime(10,15,0,'America/New_York'),
+            'created_at' => Carbon::createFromFormat('Y-m-d H:i:s', '2017-05-18 10:15:00')->toDateTimeString(),
+            'updated_at' => Carbon::createFromFormat('Y-m-d H:i:s', '2017-05-18 10:15:00')->toDateTimeString()
+        ]);
+
+
+
+
+
+
+        DB::table('events')->insert([
             'tracker_id' => 1,
             'delta' => 1,
             'date' => Carbon::createFromDate(2017,11,16),

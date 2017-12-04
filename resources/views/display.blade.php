@@ -40,6 +40,8 @@
                     </div>
                     <div class="row ">
                         <div class="col-lg-1 col-sm-offset-1 graph">
+
+                            
                                         {!! $chart->html() !!}
                                         {!! Charts::scripts() !!}
                                         {!! $chart->script() !!}

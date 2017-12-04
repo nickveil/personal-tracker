@@ -15,6 +15,7 @@ class TrackersTableSeeder extends Seeder
     {
         $user1 = User::where('name','Track User 1')->first();
         $user2 = User::where('name', 'Track User 2')->first();
+        $user3 = User::where('name', 'Track User 3')->first();
 
         $type1 = TrackerType::where('tracker_type','Increment Counter')->first();
         $type2 = TrackerType::where('tracker_type','Totaling Counter')->first();
@@ -30,6 +31,12 @@ class TrackersTableSeeder extends Seeder
         	'name'=> 'Hours of Sleep',
         	'user_id' => $user1->id,
         	'type_id' => $type2->id
+        ]);
+
+        DB::table('trackers')->insert([
+            'name'=> 'Meetings',
+            'user_id' => $user3->id,
+            'type_id' => $type1->id
         ]);
     }
 }
