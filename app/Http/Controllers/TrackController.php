@@ -165,39 +165,20 @@ class TrackController extends Controller
                 ->groupBy('date')
                 ->selectRaw('sum(delta) as delta, date')
                 ->pluck('date');
-
-        
-        //
-
-        //$test= $eventTotal;
-        
-
-        //return $test;
     
         $trackTotal = $events->where('tracker_id', $id)->sum('delta');
         $lastWeekTotals = $events->where('tracker_id', $id)->where('date', '>',Carbon::now()->subDays(7))->where('date', '<',Carbon::now())->sum('delta');
        
         // Need graph info
-            $chart = Charts::multi('line', 'highcharts')
-                // Setup the chart settings
+        $chart = Charts::multi('line', 'morris') // Charts (https://erik.cat/projects/Charts/docs/5
 
-                ->elementLabel($trackName->name)
-                ->title($trackName->name)
-                // A dimension of 0 means it will take 100% of the space
-                //->dimensions(0, 400) // Width x Height
-                // This defines a preset of colors already done:)
-                ->template("material")
-                // You could always set them manually
-                // ->colors(['#2196F3', '#F44336', '#FFC107'])
-                // Setup the diferent datasets (this is a multi chart)
-                ->labels($eventLabel)
-                ->dataset($trackName->name,$eventDelta)
-
-               
-                
-                // Setup what the values mean
-            ;
-        
+            ->elementLabel($trackName->name)
+            ->title($trackName->name)
+            // A dimension of 0 means it will take 100% of the space
+            ->template("green-material")
+            ->labels($eventLabel)
+            ->dataset($trackName->name,$eventDelta);
+    
 
         return view('display', compact('backURL','trackName','trackTotal','lastWeekTotals','chart'));
     }

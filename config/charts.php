@@ -54,7 +54,7 @@ return [
             '#004D40', '#009688', '#4DB6AC',
         ],
         'green-material' => [
-            '#1B5E20', '#4CAF50', '#81C784',
+            '#44897a', '#44897a', '#44897a',
         ],
         'yellow-material' => [
             '#F57F17', '#FFEB3B', '#FFF176',
