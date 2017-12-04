@@ -4,9 +4,14 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
+use Illuminate\Database\Eloquent\SoftDeletes;
+
+
 class Tracker extends Model
 {
-    
+    use SoftDeletes;
+
+    protected $dates = ['deleted_at'];
 	// public function trackuser(){
 	// 	return $this->belongsTo('App\User','user_id');
 	// }
@@ -22,4 +27,6 @@ class Tracker extends Model
 	// // public function trackId(){
 	// // 	return $this->belongsTo('App\User','id');
 	// // }
+
+
 }

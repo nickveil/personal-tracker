@@ -11,7 +11,7 @@
 	@if($track->type_id === 1)
 	
   
-    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
 			<div class="card">
 
 				<div class="trackTitle text-center"><h1>{{ $track->name }}</h1></div>
@@ -30,12 +30,18 @@
 								<div class='trackerDate'>Last Update: {{$track->lastUpdate}}  </div>
 							</div>
 							<div class="col">
-								<div class='editTrack'><a href='#'>Change</a></div>
 								<div><a href="tracks/{{$track->id}}"> History</a></div> 
 							</div>
 						</div>
 					</div>
 				</div>
+				<form method="post" action="/tracks/{{$track->id}}">	
+					
+					
+					{{ csrf_field() }}
+					{{ method_field('delete') }} 
+					<div><button type="submit" name="delete" value="/{{$track->id}}" >Remove Track</button></div>
+				</form>
 			</div>
 		</div>
 
@@ -43,7 +49,7 @@
 	@else
 
 	  
-    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
 			<div class="card">
 
 				<div class="trackTitle text-center"><h1>{{$track->name}}</h1></div>
@@ -62,7 +68,14 @@
 							</div>
 						</div>
 					</div>
-				</div>	
+				</div>
+				<form method="post" action="/tracks/{{$track->id}}">	
+					
+					
+					{{ csrf_field() }}
+					{{ method_field('delete') }} 
+					<div><button type="submit" name="delete" value="/{{$track->id}}" >Remove Track</button></div>
+				</form>	
 			</div>
 		</div>
 

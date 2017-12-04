@@ -87,7 +87,7 @@ class TrackController extends Controller
     public function newTrack(Request $request)
     {
         $this->validate($request,[
-            'trackName'=> 'required|max:50',
+            'trackName'=> 'required|max:40',
         ]);
 
         $backURL = url('tracks');
@@ -247,6 +247,9 @@ class TrackController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $track = \App\Tracker::find($id);
+        $track->delete();
+
+        return redirect('/tracks');
     }
 }
