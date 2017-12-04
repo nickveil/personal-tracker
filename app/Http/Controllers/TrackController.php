@@ -42,7 +42,7 @@ class TrackController extends Controller
                             ->where( 'tracker_id', $track->id )
                             ->max('date');
 
-        if($trackUpdate < Carbon::now('America/New_York') || $track->id==1){ //ISSUE 1:this works correctly
+        if($trackUpdate <=Carbon::now('America/New_York') || $track->type_id=2){ //ISSUE 1:this works correctly
             $lastUpdate = $events
                                 ->where( 'tracker_id', $track->id )
                                 ->max('date');
@@ -84,6 +84,10 @@ class TrackController extends Controller
 
     public function newTrack(Request $request)
     {
+        $this->validate($request,[
+            'trackName'=> 'required|max:50',
+        ]);
+
         $backURL = url('tracks');
         $newTrack = new \App\Tracker;
 
@@ -107,6 +111,7 @@ class TrackController extends Controller
      */
     public function store(Request $request)
     {
+
         $value = $request->input('button');
 
         $newEvent = new \App\Event;
@@ -223,20 +228,12 @@ class TrackController extends Controller
      */
     public function edit($id)
     {
-        
-
         $backURL = url('tracks');
 
         $user = \Auth::user()->id;
         $tracker = \App\Tracker::all()->where('user_id',$user);
         $trackName = $tracker->where('id', $id)->first();
-
-        $today = Carbon::now()->format('m-d-Y');
-        //$newEvent->delta = ;
-        //$newEvent->date = Carbon::now('America/New_York')->format('Y-m-d');
-        //$newEvent->time = ??;
-        // $newEvent->created_at = Carbon::now();
-        // $newEvent->updated_at = Carbon::now();
+        $today = Carbon::now('America/New_York')->format('m-d-Y');
 
         return view('edit',compact('id','backURL','trackName','today'));
     }
@@ -251,6 +248,11 @@ class TrackController extends Controller
     public function update(Request $request, $id)
     {
         
+        $this->validate($request,[
+            'count'=> 'required|integer|min:0',
+            'userDate' => 'required|date|before:today'
+            
+        ]);
 
         $newEvent = new \App\Event;
 

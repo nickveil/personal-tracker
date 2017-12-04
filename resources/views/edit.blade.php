@@ -22,6 +22,17 @@
 								</div>
 								<div class="row center-block">
 									<form method="post" action="/tracks/{{$trackName->id}}">
+									@if(count($errors))
+										<div class="alert alert-danger">
+											<strong>Whoops!</strong> There were some problems with your input.
+											<br/>
+											<ul>
+												@foreach($errors->all() as $error)
+												<li>{{ $error }}</li>
+												@endforeach
+											</ul>
+										</div>
+									@endif
 										{{ csrf_field() }}
 										{{ method_field('PUT') }}
 										<input type="hidden" name="_token" value="{{ csrf_token() }}">
