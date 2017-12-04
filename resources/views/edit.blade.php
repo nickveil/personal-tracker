@@ -44,7 +44,7 @@
 												<div class="numCol">
 													<div class="form-group">
 														
-														<input type="text" class="form-control text-center date" name="userDate" id="userDate" placeholder="{{$today}}">
+														<input type="date" class="form-control text-center date" name="userDate" id="userDate" placeholder="{{$today}}">
 													</div>
 												</div>
 											</div>	

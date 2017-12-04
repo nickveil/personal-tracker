@@ -21,6 +21,6 @@ Route::get('/home', 'TrackController@index')->name('home');
 
 Route::resource('tracks', 'TrackController');
 
-// Route::resource('tracks/{id}','TrackController');
+Route::get('/myStats','HomeController@myStats')->name('myStats');
 
 Route::post('/tracks/newTrack','TrackController@newTrack');
