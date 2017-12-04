@@ -146,15 +146,34 @@ class TrackController extends Controller
         // Total data (overall and weekly)
         $events = \App\Event::all();
         $eventTotal = $events->where('tracker_id', $id);
-        $test= $eventTotal->sum('delta');
-        $test2 = $eventTotal->avg('date');
 
-        // return $test;
+
+        $test= $eventTotal;
+        
+
+          //return $test;
     
         $trackTotal = $events->where('tracker_id', $id)->sum('delta');
         $lastWeekTotals = $events->where('tracker_id', $id)->where('date', '>',Carbon::now()->subDays(7))->where('date', '<',Carbon::now())->sum('delta');
        
         // Need graph info
+
+        $chart = Charts::create('line','highcharts')
+            ->elementLabel($trackName->name)
+            ->title($trackName->name)
+            // A dimension of 0 means it will take 100% of the space
+            //->dimensions(0, 400) // Width x Height
+            // This defines a preset of colors already done:)
+            ->template("material")
+            // You could always set them manually
+            // ->colors(['#2196F3', '#F44336', '#FFC107'])
+            // Setup the diferent datasets (this is a multi chart)
+            ->labels($test->pluck('date'))
+            ->values($test->pluck('delta'))
+            ->responsive(true)
+            ;
+
+
             // $chart = Charts::create('line', 'fusioncharts')
             //     // Setup the chart settings
             //     ->title("My Cool Chart")
@@ -171,23 +190,26 @@ class TrackController extends Controller
                 
             //     // Setup what the values mean
             // ;
-            $chart = Charts::database($events,'line', 'plottablejs')
-                // Setup the chart settings
-                ->elementLabel($trackName->name)
-                ->title("My Cool Chart")
-                // A dimension of 0 means it will take 100% of the space
-                //->dimensions(0, 400) // Width x Height
-                // This defines a preset of colors already done:)
-                ->template("material")
-                // You could always set them manually
-                // ->colors(['#2196F3', '#F44336', '#FFC107'])
-                // Setup the diferent datasets (this is a multi chart)
-                ->groupBy('date','track_id')
+            // $chart = Charts::database($test,'line', 'highcharts');
+
+            // $chart->aggregateColumn('sum','delta')
+            //     // Setup the chart settings
+
+            //     ->elementLabel($trackName->name)
+            //     ->title($trackName->name)
+            //     // A dimension of 0 means it will take 100% of the space
+            //     //->dimensions(0, 400) // Width x Height
+            //     // This defines a preset of colors already done:)
+            //     ->template("material")
+            //     // You could always set them manually
+            //     // ->colors(['#2196F3', '#F44336', '#FFC107'])
+            //     // Setup the diferent datasets (this is a multi chart)
+            //     ->groupBy('date')
 
                
                 
-                // Setup what the values mean
-            ;
+            //     // Setup what the values mean
+            // ;
         
 
         return view('display', compact('backURL','trackName','trackTotal','lastWeekTotals','chart'));
