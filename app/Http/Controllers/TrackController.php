@@ -185,7 +185,7 @@ class TrackController extends Controller
         $date = Carbon::now('America/New_York')->format('m-d-Y');
         $this->validate($request,[
             'count'=> 'required|integer|min:0',
-            'userDate' => 'bail|required|date:format'
+            'userDate' => 'required|date|date_format:m-d-Y|before:today'
             
         ]);
 
