@@ -86,7 +86,7 @@
             }
             .totalCard {
                 border: solid #3b877b 1px;
-                min-width: 250px;
+                width: 300px;
                 margin :5px;
                 display: inline-block;
                 height: 230px;
