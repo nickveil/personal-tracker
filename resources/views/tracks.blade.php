@@ -15,10 +15,10 @@
                 
                 
                 <div class="panel-body">
-                    <div>
-                        <a class="trackTitle links pull-left" href="tracks/create"><strong>Create a new track</strong>
+                    <div class="margin">
+                        <a class="trackTitle links linksNav pull-left" href="tracks/create"><strong>Create a new track</strong>
                         </a>
-                        <strong><a class="trackTitle links pull-right" href="{{ url('/myStats') }}">Check my stats</a></strong>
+                        <strong><a class="trackTitle links linkNav pull-right" href="{{ url('/myStats') }}">Check my stats</a></strong>
                     </div>
 
                     @yield('incrementCard') 

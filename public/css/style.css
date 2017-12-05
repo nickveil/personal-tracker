@@ -52,7 +52,8 @@
                 
             }
             .links:hover,
-            .links:focus {
+            .links:focus,
+            .linksNav:hover {
               color: #ccc;
               text-decoration: blink;
             }
@@ -74,7 +75,7 @@
             }
             .card {
                 border: solid #3b877b 1px;
-                min-width: 300px;
+                width: 200px;
                 padding: 5px;
                 margin :5px;
                 display: inline-block;
@@ -108,7 +109,7 @@
             .trackerValue {
                 /*border: solid #3b877b 1px;*/
                 font-size: 65px;
-                padding:-100px !important;
+                padding:2px !important;
                 width: auto;
                 height:auto;
                 margin: 2px;
@@ -119,8 +120,13 @@
             }
 
             .arrow {
-                margin: -20px 2px;
+                margin: -20px -5px;
                 font-size: 55px;
+                background: none;
+                border: none;
+            }
+            .arrow:focus{
+                outline: 0;
             }
 
             .container .panel-body ul {
@@ -146,4 +152,10 @@
                 width: 200px;
                 height:auto;
                 margin: 5px auto; 
+            }
+            .delete{
+                border: solid #3b877b 1px;
+                width: 24px;
+                height: 24px;
+                padding: 0px 1px 2px 0px;
             }

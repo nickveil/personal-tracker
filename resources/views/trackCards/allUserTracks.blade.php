@@ -11,9 +11,15 @@
 	@if($track->type_id === 1)
 	
   
-    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+    <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 col-xl-3">
 			<div class="card">
-
+				<form method="post" action="/tracks/{{$track->id}}">	
+					
+					
+					{{ csrf_field() }}
+					{{ method_field('delete') }} 
+					<div><button class="delete" type="submit" name="delete" value="/{{$track->id}}" >X</button></div>
+				</form>
 				<div class="trackTitle text-center"><h1>{{ $track->name }}</h1></div>
 				<div class="row">
 					<div class="text-center">
@@ -35,13 +41,7 @@
 						</div>
 					</div>
 				</div>
-				<form method="post" action="/tracks/{{$track->id}}">	
-					
-					
-					{{ csrf_field() }}
-					{{ method_field('delete') }} 
-					<div><button type="submit" name="delete" value="/{{$track->id}}" >Remove Track</button></div>
-				</form>
+
 			</div>
 		</div>
 
@@ -49,9 +49,15 @@
 	@else
 
 	  
-    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+    <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 col-xl-3">
 			<div class="card">
-
+				<form method="post" action="/tracks/{{$track->id}}">	
+					
+					
+					{{ csrf_field() }}
+					{{ method_field('delete') }} 
+					<div><button class="delete" type="submit" name="delete" value="/{{$track->id}}" >X</button></div>
+				</form>	
 				<div class="trackTitle text-center"><h1>{{$track->name}}</h1></div>
 	
 				<div class="row">
@@ -69,13 +75,7 @@
 						</div>
 					</div>
 				</div>
-				<form method="post" action="/tracks/{{$track->id}}">	
-					
-					
-					{{ csrf_field() }}
-					{{ method_field('delete') }} 
-					<div><button type="submit" name="delete" value="/{{$track->id}}" >Remove Track</button></div>
-				</form>	
+
 			</div>
 		</div>
 

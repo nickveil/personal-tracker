@@ -87,7 +87,7 @@ class TrackController extends Controller
     public function newTrack(Request $request)
     {
         $this->validate($request,[
-            'trackName'=> 'required|max:40',
+            'trackName'=> 'required|max:30',
         ]);
 
         $backURL = url('tracks');
