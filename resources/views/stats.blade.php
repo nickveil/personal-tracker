@@ -9,13 +9,15 @@
         <div class="panel-heading">My Stats</div>
         <div class="panel-body">
         <div class="container"> 
-          <div class="row">
+          
           	@foreach ($tracker as $track)
+            <div class="row">
           		<h1>{{ $track->name }}</h1>
-          		<h2>Overall Totals:{{ $track->trackTotal }}</h2>
+          		<h2>Overall:{{ $track->trackTotal }}</h2>
 
+                <div class="row">
           		 
-                <div class="col-lg-12 col-sm-offset-1 graph"> 
+                <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10 col-xl-10 graph"> 
 
 
                   {!! $track->chart->html() !!}
@@ -23,12 +25,15 @@
                   {!! $track->chart->script() !!} 
                 </div>
               </div>
+              </div>
           	@endforeach
+            <div class='text-center'> <a href='{{ $backURL }}'>Back</a></div>
           </div>
+
         </div>
       </div>
       </div>
-      <div class='text-center'> <a href='{{ $backURL }}'>Back</a></div>
+      
     </div>
   </div>
 </div>

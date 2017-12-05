@@ -98,7 +98,7 @@
             .graph {
                 border: solid #3b877b 1px;
                 text-align: center;
-                width:auto;
+                min-width:250px;
                 margin :25px;
                 height: auto;
                 box-shadow: -3px 3px #ccc;
