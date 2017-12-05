@@ -213,7 +213,7 @@ class TrackController extends Controller
         
         $this->validate($request,[
             'count'=> 'required|integer|min:0',
-            'userDate' => 'required|date|before:today'
+            'userDate' => 'required|date|before:tomorrow'
             
         ]);
 
