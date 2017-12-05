@@ -89,9 +89,9 @@
                     <img src="http://pngimg.com/uploads/monitor/laptop_PNG5888.png" width='300px' height='auto'/>
                 </div>
                 <div class='description m-b-md'>
-                    A quick tool to track things and quickly discover the positive or negative relationships between your things.
+                    A quick tool to track things on a day to day basis.
                     <br/>
-                    Give it a try <a class="links" href="{{ url('/register') }}">Register</a>
+                    Give it a try <a class="links" href="{{ url('/register') }}">Register</a> or <a class="links" href="https://github.com/nickveil/personal-tracker/blob/master/readme.md" target="_blank">Find out more</a>
                 </div>
             </div>
         </div>

@@ -70,6 +70,9 @@
                                             {{ csrf_field() }}
                                         </form>
                                     </li>
+                                    <li>
+                                        <a href="https://github.com/nickveil/personal-tracker/blob/master/readme.md" target="_blank">Help
+                                        </a>
                                 </ul>
                             </li>
                         @endif
