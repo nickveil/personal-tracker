@@ -6,17 +6,22 @@
     <div class="row">
         <div class="col-lg-12">
             <div class="panel panel-default">
-                <div class="panel-heading">Current Tracks
-                    <div>
-                        <a href="{{ url('/myStats') }}"> Check my stats...</a>
-                    </div>
+                <div class="panel-heading">
+                    
+                    Current Tracks 
+
+                      
                 </div>
-                <a class="trackTitle" href="tracks/create"><strong>Create a new track...</strong></a>
+                
+                
                 <div class="panel-body">
-                    <ul class="list-unstyled list-inline">
-                        <li>@yield('incrementCard')</li>
-                        <li>@yield('totalsCard')</li>
-                    </ul>  
+                    <div>
+                        <a class="trackTitle links pull-left" href="tracks/create"><strong>Create a new track</strong>
+                        </a>
+                        <strong><a class="trackTitle links pull-right" href="{{ url('/myStats') }}">Check my stats</a></strong>
+                    </div>
+
+                    @yield('incrementCard') 
                 </div>
             </div>
         </div>

@@ -56,7 +56,7 @@ A web application to track anything. Tracker allows a user to track their habits
 ## Stretch Goals
 
 
-[ ] 1. Capture data from a user setup screen to create new tracks
+[X] 1. Capture data from a user setup screen to create new tracks
 
-[ ] 2. Use D3js library to present user data and interactions in an interesting way.
+[X] 2. Use D3js library to present user data and interactions in an interesting way.
 
