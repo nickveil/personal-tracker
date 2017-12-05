@@ -7,11 +7,8 @@
     <div class="col-lg-12">
       <div class="panel panel-default">
         <div class="panel-heading"> New Track</div>
-                
+               
         <div class="panel-body"> 
-
-
-
         	<form class="form-horizontal" method="post" action="/tracks/newTrack">
         		@if(count($errors))
 										<div class="alert alert-danger">
@@ -52,8 +49,6 @@
 					    </div>
 					  </div>
 					</form>
-
-
         </div>
 				<div class='text-center'>
 					<a href='{{ $backURL }}'>Cancel</a>

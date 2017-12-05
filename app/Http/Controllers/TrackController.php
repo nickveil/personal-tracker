@@ -34,17 +34,17 @@ class TrackController extends Controller
             return view ('tracks');
         }
         
-        // Pulls data from DB to populate Count and Last Update
+        // Pulls data from DB to populate Count and Last Update on Current Tracks Blade
 
         $events = \App\Event::all();
         
 
-        foreach ($tracker as $track) {
+        foreach ($tracker as $track) { 
         $trackUpdate = $events
                             ->where( 'tracker_id', $track->id )
                             ->max('date');
 
-        if($trackUpdate <=Carbon::now('America/New_York') || $track->type_id=2){ //ISSUE 1:this works correctly
+        if($trackUpdate <=Carbon::now('America/New_York') || $track->type_id=2){ 
             $lastUpdate = $events
                                 ->where( 'tracker_id', $track->id )
                                 ->max('date');
@@ -56,7 +56,7 @@ class TrackController extends Controller
         }
         else{
 
-            $trackTotal = $events  // ISSUE 1:this does not work correctly
+            $trackTotal = $events  
                                 ->where( 'tracker_id', $track->id )
                                 ->where( 'date', $lastUpdate)
                                 ->sum('delta');
@@ -130,7 +130,6 @@ class TrackController extends Controller
         $newEvent->created_at = Carbon::now();
         $newEvent->updated_at = Carbon::now();
 
-        //return $newEvent;
         $newEvent->save();
         return redirect('/tracks');
     }
@@ -153,7 +152,6 @@ class TrackController extends Controller
         // Total data (overall and weekly)
         $events = \App\Event::all()->where('tracker_id',$id);
         
-
         $eventDelta = \App\Event::where('tracker_id', $id)
                 ->orderBy('date','asc')
                 ->groupBy('date')
@@ -169,17 +167,14 @@ class TrackController extends Controller
         $trackTotal = $events->where('tracker_id', $id)->sum('delta');
         $lastWeekTotals = $events->where('tracker_id', $id)->where('date', '>',Carbon::now()->subDays(7))->where('date', '<',Carbon::now())->sum('delta');
        
-        // Need graph info
         $chart = Charts::multi('line', 'morris') // Charts (https://erik.cat/projects/Charts/docs/5
 
             ->elementLabel($trackName->name)
             ->title($trackName->name)
-            // A dimension of 0 means it will take 100% of the space
             ->template("green-material")
             ->labels($eventLabel)
             ->dataset($trackName->name,$eventDelta);
     
-
         return view('display', compact('backURL','trackName','trackTotal','lastWeekTotals','chart'));
     }
 
@@ -232,10 +227,8 @@ class TrackController extends Controller
         $newEvent->created_at = Carbon::now();
         $newEvent->updated_at = Carbon::now();
 
-        //return $newEvent;
         $newEvent->save();
         return redirect('/home');
-
 
     }
 
