@@ -6,10 +6,12 @@
     <div class="row">
         <div class="col-lg-12">
             <div class="panel panel-default">
-                <div class="panel-heading">{{$trackName->name}} History </div>
-                    <div class='trackTitle links pull-right'> 
-                        <a href='{{ $backURL }}'>Back</a>
+                <div class="panel-heading">{{$trackName->name}} History 
+                    <div class="margin">
+                        <a class="trackTitle links linkNav pull-right" href="{{ $backURL }}"><strong>Back</strong></a>
                     </div>
+                </div>
+
                
                 <div class="panel-body"> 
                     <div class="row">

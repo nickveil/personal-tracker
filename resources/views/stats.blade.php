@@ -6,7 +6,11 @@
 	<div class="row">
     <div class="col-lg-12">
       <div class="panel panel-default">
-        <div class="panel-heading">My Stats</div>
+        <div class="panel-heading">My Stats
+          <div class="margin">
+            <a class="trackTitle links linkNav pull-right" href="{{ $backURL }}"><strong>Back</strong></a>
+          </div>
+        </div>
         <div class="panel-body">
           <div class="container"> 
           	@foreach ($tracker as $track)

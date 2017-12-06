@@ -72,17 +72,17 @@
                 font-size: 36px;
                 font-weight: 400;
                 background-color: #eee !important;
+                
             }
             .card {
                 border: solid #3b877b 1px;
-                width: 200px;
+                width: 230px;
                 padding: 5px;
                 margin :15px;
                 display: block;
-                height: 320px;
+                height: 310px;
                 box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
                 transition: 0.3s;
-
                 border-radius: 3px;
 
             }
