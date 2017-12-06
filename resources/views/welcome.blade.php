@@ -85,9 +85,10 @@
                 <div class="title m-b-md">
                     Welcome to Tracker
                 </div>
-                <div class="display m-b-md">
+<!--                 <div class="display m-b-md">
+                    
                     <img src="http://pngimg.com/uploads/monitor/laptop_PNG5888.png" width='300px' height='auto'/>
-                </div>
+                </div> -->
                 <div class='description m-b-md'>
                     A quick tool to track things on a day to day basis.
                     <br/>
