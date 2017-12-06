@@ -58,7 +58,7 @@ class HomeController extends Controller
                             ->pluck('date');
 
 
-            $track->chart = Charts::multi('line', 'morris') // Charts (https://erik.cat/projects/Charts/docs/5
+            $track->chart = Charts::multi('bar', 'morris') // Charts (https://erik.cat/projects/Charts/docs/5
 
             ->elementLabel($track->name)
             ->title($track->name)

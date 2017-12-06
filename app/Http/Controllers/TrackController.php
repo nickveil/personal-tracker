@@ -168,7 +168,7 @@ class TrackController extends Controller
         $trackTotal = $events->where('tracker_id', $id)->sum('delta');
         $lastWeekTotals = $events->where('tracker_id', $id)->where('date', '>',Carbon::now()->subDays(7))->where('date', '<',Carbon::now())->sum('delta');
        
-        $chart = Charts::multi('line', 'morris') // Charts (https://erik.cat/projects/Charts/docs/5
+        $chart = Charts::multi('bar', 'morris') // Charts (https://erik.cat/projects/Charts/docs/5
 
             ->elementLabel($trackName->name)
             ->title($trackName->name)
