@@ -10,6 +10,7 @@
                 font-weight: 100;
                 height: 100vh;
                 margin: 0;
+                display: block;
             }
 
             .full-height {
@@ -94,11 +95,15 @@
                 border: solid #3b877b 1px;
                 width: 300px;
                 margin :5px;
-                display: inline-block;
+                display: block;
                 height: 230px;
                 box-shadow: -3px 3px #ccc;
                 border-radius: 3px;
-
+                box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+                transition: 0.3s;
+            }
+            .totalCard:hover{
+                box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
             }
 
             .graph {
@@ -109,14 +114,15 @@
                 height: auto;
                 box-shadow: -3px 3px #ccc;
                 border-radius: 3px;
-
-
+                box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+                transition: 0.3s;
+            }
+            .graph:hover{
+                box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
             }
             .trackerValue {
                 /*border: solid #3b877b 1px;*/
                 font-size: 50px;
-             
-
                 width: auto;
                 height:55px;
                 margin: 2px;
@@ -138,8 +144,12 @@
             }
             .newTrackTitle{
                 margin:25px 2px;
+                text-shadow:  0px 2px  rgba(0,0,0,0.2);
+                transition: 0.3s;
             }
-
+            .newTrackTitle:hover{
+                text-shadow:  0px 4px  rgba(0,0,0,0.2);
+            }
             .arrow {
           
                 text-shadow:  0px 2px  rgba(0,0,0,0.2);
@@ -154,6 +164,9 @@
             .arrow:focus{
                 outline: 0;
             }
+            .arrowCol{
+                display: inline-flex;
+            }
             .editTrack {
           
                 text-shadow:  0px 2px  rgba(0,0,0,0.2);
@@ -167,6 +180,20 @@
                 text-shadow:  0px 4px  rgba(0,0,0,0.2);
             }
             .editTrack:focus{
+                outline: 0;
+            }
+            .trackHistory {
+                text-shadow:  0px 2px  rgba(0,0,0,0.2);
+                font-size: 14px;
+                height: 15px;
+                background: none;
+                border: 0;
+                transition: 0.3s;
+            }
+            .trackHistory:hover{
+                text-shadow:  0px 4px  rgba(0,0,0,0.2);
+            }
+            .trackHistory:focus{
                 outline: 0;
             }
             .container .panel-body ul {

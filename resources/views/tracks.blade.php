@@ -8,10 +8,11 @@
             <div class="panel panel-default">
                 <div class="panel-heading">
                     Current Tracks
-                    <div class="margin">
-                        <a class="navTitle links linkNav pull-right" href="{{ url('/myStats') }}"><strong>Check my stats</strong></a>
-                    </div>
+                    
                 </div>
+                <div class="margin">
+                        <a class="navTitle trackHistory links linkNav pull-right" href="{{ url('/myStats') }}"><strong>Check my stats</strong></a>
+                    </div>
                 <div class="panel-body">
                     @yield('incrementCard') 
                 </div>

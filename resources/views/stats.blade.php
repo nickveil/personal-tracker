@@ -8,7 +8,7 @@
       <div class="panel panel-default">
         <div class="panel-heading">My Stats
           <div class="margin">
-            <a class="navTitle links linkNav pull-right" href="{{ $backURL }}"><strong>Back</strong></a>
+            <a class="navTitle trackHistory links linkNav pull-right" href="{{ $backURL }}"><strong>Back</strong></a>
           </div>
         </div>
         <div class="panel-body">
@@ -26,7 +26,7 @@
                 </div>
                 </div>
           	@endforeach
-            <div class='text-center'> <a href='{{ $backURL }}'>Back</a></div>
+            <div class='text-center trackHistory'> <a href='{{ $backURL }}'>Back</a></div>
           </div>
         </div>
       </div>
