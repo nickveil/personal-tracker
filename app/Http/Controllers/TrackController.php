@@ -88,6 +88,7 @@ class TrackController extends Controller
     {
         $this->validate($request,[
             'trackName'=> 'bail|required|max:30',
+            'trackType'=> 'required',
         ]);
 
         $backURL = url('tracks');
