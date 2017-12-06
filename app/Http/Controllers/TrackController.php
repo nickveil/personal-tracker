@@ -44,7 +44,7 @@ class TrackController extends Controller
                             ->where( 'tracker_id', $track->id )
                             ->max('date');
 
-        if($trackUpdate <=Carbon::now('America/New_York') || $track->type_id=2){ 
+        if($trackUpdate <=Carbon::now('America/New_York') && $track->type_id==2){ 
             $lastUpdate = $events
                                 ->where( 'tracker_id', $track->id )
                                 ->max('date');
@@ -54,14 +54,14 @@ class TrackController extends Controller
                                 ->sum( 'delta' );
 
         }
-        else{
-
+        elseif ($track->type_id == 1){
+            $lastUpdate = Carbon::now('America/New_York')->format('Y-m-d');
             $trackTotal = $events  
                                 ->where( 'tracker_id', $track->id )
-                                ->where( 'date', $lastUpdate)
+                                ->where( 'date', Carbon::now('America/New_York')->format('Y-m-d'))
                                 ->sum('delta');
                                 
-            $lastUpdate = Carbon::now('America/New_York')->format('Y-m-d');
+            
         }
         
         $track->trackTotal = $trackTotal;
