@@ -14,14 +14,15 @@ Tracker is a simple application to help users keep track of things through out t
 ## Types of Tracks
 
 # Incrementing Tracker
-<
+<img src="https://raw.githubusercontent.com/nickveil/personal-tracker/14ad6fc6cf847a15748a77b159b7cc60078a3c61/public/pics/incrementingTrack.png">
 
 An incrementing tracker allows you to track instances as they happen.
 - ** The arrow keys increase and decrease the daily track total.
 - ** The history button allows you to see the history of that track.
 
 # Totals Tracker
-<
+<img src="https://raw.githubusercontent.com/nickveil/personal-tracker/14ad6fc6cf847a15748a77b159b7cc60078a3c61/public/pics/totalsTrack.png">
+
 A totals tracker allows you to set totals after they have occured.
 - ** The set total button allows you to enter the total for your track and specify the date the event occured. 
 - ** The history button allows you to see the history of that track.
