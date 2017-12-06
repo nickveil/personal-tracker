@@ -72,7 +72,7 @@
                 font-size: 36px;
                 font-weight: 400;
                 background-color: #eee !important;
-                
+
             }
             .card {
                 border: solid #3b877b 1px;
@@ -115,31 +115,60 @@
             .trackerValue {
                 /*border: solid #3b877b 1px;*/
                 font-size: 50px;
-                padding:2px !important;
+             
 
                 width: auto;
-                height:auto;
+                height:55px;
                 margin: 2px;
             }
 
             .trackTitle {
-                margin: -25px 2px;
+                font-size: 25px;
+                font-weight: 500;
+                margin: 5px 2px;
+                height: 50px;
+                width: auto;
+                align-items: 
             }
-
+            .navTitle {
+                font-size: 32px;
+                font-weight: 400;
+                margin: -25px 2px;
+               
+            }
             .newTrackTitle{
                 margin:25px 2px;
             }
 
             .arrow {
-                margin: -20px -5px;
+          
+                text-shadow:  0px 2px  rgba(0,0,0,0.2);
                 font-size: 55px;
                 background: none;
-                border: none;
+                border: 0;
+                transition: 0.3s;
+            }
+            .arrow:hover{
+                text-shadow:  0px 4px  rgba(0,0,0,0.2);
             }
             .arrow:focus{
                 outline: 0;
             }
-
+            .editTrack {
+          
+                text-shadow:  0px 2px  rgba(0,0,0,0.2);
+                font-size: 25px;
+                height: 60px;
+                background: none;
+                border: 0;
+                transition: 0.3s;
+            }
+            .editTrack:hover{
+                text-shadow:  0px 4px  rgba(0,0,0,0.2);
+            }
+            .editTrack:focus{
+                outline: 0;
+            }
             .container .panel-body ul {
                 display:inline-block;
                 justify-content: center;
@@ -156,13 +185,13 @@
                 height:auto;
                 margin: 25px auto 5px; 
             }
-            .date{
-                border: solid #3b877b 1px;
-                font-size: 25px;
-                padding:-100px !important;
+            .trackerDate{
+                
+                font-size: 16px;
+                font-weight: 200;
                 width: 200px;
                 height:auto;
-                margin: 5px auto; 
+                margin: 15px auto; 
             }
             .delete{
                 border: solid #3b877b 1px;

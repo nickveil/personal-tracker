@@ -9,7 +9,7 @@
                 <div class="panel-heading">
                     Current Tracks
                     <div class="margin">
-                        <a class="trackTitle links linkNav pull-right" href="{{ url('/myStats') }}"><strong>Check my stats</strong></a>
+                        <a class="navTitle links linkNav pull-right" href="{{ url('/myStats') }}"><strong>Check my stats</strong></a>
                     </div>
                 </div>
                 <div class="panel-body">

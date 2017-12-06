@@ -87,7 +87,7 @@ class TrackController extends Controller
     public function newTrack(Request $request)
     {
         $this->validate($request,[
-            'trackName'=> 'bail|required|max:30',
+            'trackName'=> 'bail|required|max:25',
             'trackType'=> 'required',
         ]);
 
