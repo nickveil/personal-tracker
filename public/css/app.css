@@ -243,7 +243,7 @@ th {
 
   a,
   a:visited {
-    text-decoration: none;
+    text-decoration: underline;
   }
 
   a[href]:after {
@@ -1419,14 +1419,14 @@ textarea {
 }
 
 a {
-  color: #3b877b;
+  color: #3097D1;
   text-decoration: none;
 }
 
 a:hover,
 a:focus {
-  color: #3b877b;
-  text-decoration: none;
+  color: #216a94;
+  text-decoration: underline;
 }
 
 a:focus {
